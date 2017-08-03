@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import sys
+from vendas import moduloCadCliente
 
 
 def login():
@@ -15,33 +16,34 @@ def login():
         i += 1
 
 
-def modulovendas():
+def vendas():
     pyautogui.hotkey('Alt', 'v')
     time.sleep(5)
-    pyautogui.keyDown('Alt')
-    pyautogui.press('s')
-    pyautogui.press('r')
-    pyautogui.keyUp('Alt')
 
 
-def modulocontareceber():
+def contareceber():
     pyautogui.hotkey('Alt', 'r')
+    time.sleep(5)
 
 
-def modulocontapagar():
+def contapagar():
     pyautogui.hotkey('Alt', 'p')
+    time.sleep(5)
 
 
-def modulolivrofiscal():
+def livrofiscal():
     pyautogui.hotkey('Alt', 'l')
+    time.sleep(5)
 
 
-def modulocontabilidade():
+def contabilidade():
     pyautogui.hotkey('Alt', 'c')
+    time.sleep(5)
 
 
-def moduloativo():
+def ativo():
     pyautogui.hotkey('Alt', 'a')
+    time.sleep(5)
 
 if __name__ == "__main__":
     pyautogui.doubleClick(65, 321)
@@ -51,9 +53,8 @@ if __name__ == "__main__":
     time.sleep(2)
     login()
     time.sleep(2)
-    if sys.argv[1] == "1":
-        modulovendas()
-    elif sys.argv[1] == "2":
-        modulolivrofiscal()
-    else:
-        print(u"opcão invalida")
+    # if sys.argv.__getitem__(1) == "1":
+    vendas()
+    moduloCadCliente()
+    # elif sys.argv.__getitem__(1) == "2":
+    #     modulolivrofiscal()
